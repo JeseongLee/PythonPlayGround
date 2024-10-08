@@ -1,2 +1,7 @@
 # PythonPlayGround
-# 파이썬 스크립트 1차 업로드함
+# Build Note
+## 0.0.0
+### 2024-10-08
+1. 최초 커밋
+2. gitignore 설정
+3. 폴더명 변경
