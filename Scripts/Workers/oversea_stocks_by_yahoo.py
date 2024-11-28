@@ -29,7 +29,7 @@ def getValue(obj, key):
         return ''
     
 now = datetime.now()
-isinCodeData = pandas.read_csv('C:/Users/11279/Downloads/isin_code.csv')
+isinCodeData = pandas.read_csv('C:/Users/11279/Documents/isin-ticker/202411/isin-stock.csv')
 # print(isinCodeData['isin_code'])
 print(isinCodeData['isin_code'].size)
 isinCodeList = isinCodeData['isin_code']
@@ -77,4 +77,4 @@ print(dataFrame)
 result = pandas.DataFrame(dataFrame)
 print(result)
 now = datetime.now()
-result.to_csv('C:/Users/11279/Documents/isin-ticker/result_' + now.strftime('%Y%m%d%H%M%S') + '.csv', encoding='utf-8-sig')    
+result.to_csv('C:/Users/11279/Documents/isin-ticker/202411/result_' + now.strftime('%Y%m%d%H%M%S') + '.csv', encoding='utf-8-sig')    
