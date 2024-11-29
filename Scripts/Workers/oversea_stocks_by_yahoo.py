@@ -28,8 +28,8 @@ def getValue(obj, key):
     else:
         return ''
     
-now = datetime.now()
-isinCodeData = pandas.read_csv('C:/Users/11279/Downloads/isin_code.csv')
+startTime = datetime.now()
+isinCodeData = pandas.read_csv('C:/Users/11279/Documents/isin-ticker/202411/isin_code_target_20241129.csv')
 # print(isinCodeData['isin_code'])
 print(isinCodeData['isin_code'].size)
 isinCodeList = isinCodeData['isin_code']
@@ -72,9 +72,13 @@ for isinCode in isinCodeList:
     dataFrame['industryDisp'].append(getValue(stock, 'industryDisp'))
     dataFrame['isYahooFinance'].append(getValue(stock, 'isYahooFinance'))
     # if count == 10: break
+completeTime = datetime.now()
+diffTime = completeTime - startTime
 
 print(dataFrame)    
 result = pandas.DataFrame(dataFrame)
 print(result)
-now = datetime.now()
-result.to_csv('C:/Users/11279/Documents/isin-ticker/result_' + now.strftime('%Y%m%d%H%M%S') + '.csv', encoding='utf-8-sig')    
+
+result.to_csv('C:/Users/11279/Documents/isin-ticker/202411/result_' + completeTime.strftime('%Y%m%d%H%M%S') + '.csv', encoding='utf-8-sig')  
+print('COMPLETE :: ' + str(count) + '/' + str(total) + ' [' + str(round(count/total*100, 2)) + '%]')
+print('COMPLETE DURATION :: [' + str(diffTime.seconds) + 's] [' + str(diffTime.microseconds) + 'ms]')
